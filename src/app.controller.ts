@@ -8,6 +8,10 @@ export class AppController {
   @Get() // route " " /=> API (restful)
   @Render("home")
   getHello() {
+    const message = this.appService.getHello();
+    return {
+      massage : message
+    }
     // return "this.appService.getHello()";
   }
 }
