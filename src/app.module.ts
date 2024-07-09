@@ -16,9 +16,11 @@ import { AuthModule } from './auth/auth.module';
       }),
       inject: [ConfigService],
     }),
-    ConfigModule.forRoot({ignoreEnvFile: true}),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     UsersModule,
-    AuthModule
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
